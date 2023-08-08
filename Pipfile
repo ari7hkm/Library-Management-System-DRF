@@ -13,6 +13,7 @@ djoser = "*"
 drf-nested-routers = "*"
 djangorestframework-simplejwt = "*"
 django-environ = "*"
+whitenoise = "*"
 
 [dev-packages]
 pytest = "*"
