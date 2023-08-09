@@ -3,18 +3,8 @@ import environ
 from pathlib import Path
 from datetime import timedelta
 
-env = environ.Env()
-environ.Env.read_env()
 
-
-BASE_DIR = Path(__file__).resolve().parent.parent
-
-
-SECRET_KEY = 'django-insecure-()6(7vh3x%$@f3@bow5l-%i_kh8m9li1x0se60ilo2(03rp*-7'
-
-DEBUG = True
-
-ALLOWED_HOSTS = []
+BASE_DIR = Path(__file__).resolve().parent.parent.parent
 
 
 INSTALLED_APPS = [
@@ -26,12 +16,13 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'djoser',
-    'library.apps.LibraryAppConfig',
-    'core.app.CoreAppConfig',
+    'library.apps.LibraryConfig',
+    'core.apps.CoreConfig',
 ]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -62,16 +53,6 @@ WSGI_APPLICATION = 'config.wsgi.application'
 
 
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': '', # The name of your database
-        'HOST': '', # The host
-        'USER': '', # The User
-        'PASSWORD': '' # The password
-    }
-}
-
 
 
 AUTH_PASSWORD_VALIDATORS = [
@@ -98,9 +79,6 @@ TIME_ZONE = 'UTC'
 USE_I18N = True
 
 USE_TZ = True
-
-
-
 
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
