@@ -26,8 +26,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'djoser',
-    'library.apps.LibraryAppConfig',
-    'core.app.CoreAppConfig',
+    'library.apps.LibraryConfig',
+    'core.apps.CoreConfig',
 ]
 
 MIDDLEWARE = [
